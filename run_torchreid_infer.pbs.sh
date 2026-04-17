@@ -24,11 +24,11 @@ echo "Working directory is now: $(pwd)"
 echo '=========='
 echo 'Fixed job configuration'
 echo '=========='
-CONDA_ENV_NAME="torchreid"
-WEIGHTS_PATH="osnet_ibn_x1_0_imagenet.pth"
+CONDA_ENV_NAME="torchreid_py310"
+WEIGHTS_PATH="weights/osnet_ain_x1_0_reid_msmt17.pth"
 INPUT_PATH="test_data"
 OUTPUT_PATH="outputs/test_data_reid_embeddings.pt"
-MODEL_NAME="osnet_ibn_x1_0_imagenet"
+MODEL_NAME="osnet_ain_x1_0"
 DEVICE="cuda"
 BATCH_SIZE="32"
 INPUT_MODE="tracklets"
@@ -68,10 +68,10 @@ echo '=========='
 echo 'Installation reminder'
 echo '=========='
 echo 'If the environment is not prepared yet, install with:'
-echo '  conda create -n torchreid python=3.10 -y'
-echo '  conda activate torchreid'
+echo '  conda create -n torchreid_py310 python=3.10 -y'
+echo '  conda activate torchreid_py310'
 echo '  pip install -r requirements.txt'
-echo '  pip install torch torchvision'
+echo '  pip install torch==2.7.1 torchvision==0.22.1 torchaudio==2.7.1 --index-url https://download.pytorch.org/whl/cu126'
 echo '  python setup.py develop'
 
 echo '=========='
