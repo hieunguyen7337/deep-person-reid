@@ -1,0 +1,77 @@
+================================================
+Submission directory = /mnt/hpccs01/home/n12194778/video_ai_identification/deep-person-reid
+================================================
+Working directory is now: /mnt/hpccs01/home/n12194778/video_ai_identification/deep-person-reid
+==========
+Fixed job configuration
+==========
+==========
+Load CUDA modules
+==========
+==========
+Activate conda env
+==========
+Activating conda env: torchreid_py310
+==========
+Environment diagnostics
+==========
+Fri Apr 17 14:06:11 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 595.58.03              Driver Version: 595.58.03      CUDA Version: 13.2     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          On  |   00000000:07:00.0 Off |                    0 |
+| N/A   37C    P0             55W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+/home/n12194778/miniconda3/envs/torchreid_py310/bin/python
+PyTorch version: 2.7.1+cu126
+CUDA available: True
+GPU count: 1
+Current GPU: NVIDIA A100-SXM4-40GB
+==========
+Installation reminder
+==========
+If the environment is not prepared yet, install with:
+  conda create -n torchreid_py310 python=3.10 -y
+  conda activate torchreid_py310
+  pip install -r requirements.txt
+  pip install torch==2.7.1 torchvision==0.22.1 torchaudio==2.7.1 --index-url https://download.pytorch.org/whl/cu126
+  python setup.py develop
+==========
+Prepare inference arguments
+==========
+Using GPU index: 0
+Model name: osnet_ain_x1_0
+Checkpoint: weights/osnet_ain_x1_0_reid_msmt17.pth
+Input path: test_data
+Output path: outputs/test_data_reid_embeddings.pt
+Input mode: tracklets
+Batch size: 32
+=========================
+Running Torchreid inference
+=========================
+Fri Apr 17 02:07:26 PM AEST 2026
+Model: osnet_ain_x1_0
+- params: 2,193,616
+- flops: 978,878,352
+Successfully loaded pretrained weights from "weights/osnet_ain_x1_0_reid_msmt17.pth"
+** The following layers are discarded due to unmatched keys or layer size: ['classifier.weight', 'classifier.bias']
+Processed tracklet gbp1fC: 33 frames -> 1 embedding
+Processed tracklet mbc5vA: 118 frames -> 1 embedding
+Saved embeddings to outputs/test_data_reid_embeddings.pt
+=========================
+Done.
+=========================
+Fri Apr 17 02:09:14 PM AEST 2026
