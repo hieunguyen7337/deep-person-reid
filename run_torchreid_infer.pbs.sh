@@ -25,10 +25,10 @@ echo '=========='
 echo 'Fixed job configuration'
 echo '=========='
 CONDA_ENV_NAME="torchreid"
-WEIGHTS_PATH="osnet_ain_x1_0.pth"
+WEIGHTS_PATH="osnet_ibn_x1_0_imagenet.pth"
 INPUT_PATH="test_data"
 OUTPUT_PATH="outputs/test_data_reid_embeddings.pt"
-MODEL_NAME="osnet_ain_x1_0"
+MODEL_NAME="osnet_ibn_x1_0_imagenet"
 DEVICE="cuda"
 BATCH_SIZE="32"
 INPUT_MODE="tracklets"
